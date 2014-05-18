@@ -2,21 +2,21 @@
 return array(
     'controllers' => array(
         'invokables' => array(
-            'EspaceMembre\Controller\EspaceMembre' => 'EspaceMembre\Controller\EspaceMembreController',
+            'DynamicForm\Controller\DynamicForm' => 'DynamicForm\Controller\DynamicFormController',
         ),
     ),
     'router' => array(
         'routes' => array(
-            'espacemembre' => array(
+            'dynamicform' => array(
                 'type' => 'segment',
                 'options' => array(
-                    'route' => '/membre[/][:action][/:id]',
+                    'route' => '/dynamicform[/][:action][/:id]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id' => '[0-9]+',
                     ),
                     'defaults' => array(
-                        'controller' => 'EspaceMembre\Controller\EspaceMembre',
+                        'controller' => 'DynamicForm\Controller\DynamicForm',
                         'action' => 'index',
                     ),
                 ),
@@ -25,7 +25,7 @@ return array(
     ),
     'view_manager' => array(
         'template_path_stack' => array(
-            'espace-membre' => __DIR__ . '/../view',
+            'dynamic-form' => __DIR__ . '/../view',
         ),
     ),
 );
