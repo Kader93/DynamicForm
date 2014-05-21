@@ -1,5 +1,5 @@
 <?php
-namespace EspaceMembre;
+namespace DynamicForm;
 class Module {
 
     public static $ModuleLocation = __DIR__;
