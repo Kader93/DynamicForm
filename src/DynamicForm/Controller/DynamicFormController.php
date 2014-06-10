@@ -1,22 +1,18 @@
 <?php
 namespace DynamicForm\Controller;
 
-use DynamicForm\Model\Membre;
 use Zend\Mvc\Controller\AbstractActionController;
-use DynamicForm\Form\DynamicForm;
-
 
 class DynamicFormController extends AbstractActionController
 {
     public function indexAction()
     {
-        $filepath = \DynamicForm\Module::$ModuleLocation."/ressources/Json/membreForm.config.json";
-        $form = new DynamicForm($filepath);
-        $form->get('submit')->setValue("S'inscrire");
+        $sm = $this->getServiceLocator();
+        $DFS = $sm->get('DynamicFormService');
+        $form = $DFS->get('membre');
+        $form->setInputFilter($form->getInputFilter());
         $request = $this->getRequest();
         if ($request->isPost()) {
-            $membre = new Membre();
-            $form->setInputFilter($membre->getInputFilter());
             $form->setData($request->getPost());
             $form->isValid();
         }

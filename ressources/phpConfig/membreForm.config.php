@@ -1,5 +1,5 @@
 <?php
-return array(
+return array('membre' => array(
     array(
         'name' => 'pseudo',
         'type'  => 'text',
@@ -92,4 +92,4 @@ return array(
                 'id' => 'submitbutton',
             ),
         ),
-);
+));

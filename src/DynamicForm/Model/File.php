@@ -1,6 +1,7 @@
 <?php
 
 namespace DynamicForm\Model\FormConfigManager;
+use DynamicForm\Model\FormConfigManager;
 
 //require '/Users/Kader/ZendAppli/DynamicForm/src/DynamicForm/Model/FormConfigManager/AbstractFormConfigManager.php';
 
